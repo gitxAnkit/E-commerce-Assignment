@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 
 const ProductCard = ({ product }) => {
   const options = {
-    value: product.ratings,
+    value: product.rating.rate,
     readOnly: true,
     precision: 0.5,
   };
@@ -16,14 +16,14 @@ const ProductCard = ({ product }) => {
     >
       <img
         className="w-36 h-36 object-cover mb-2"
-        src={product.image[0]}
+        src={product.image}
         alt={product.title}
       />
       <p className="font-roboto text-lg mb-1">{product.name}</p>
       <div className="flex items-center mb-2">
         <Rating {...options} />
         <span className="ml-1 font-light text-sm">
-          ({product.numOfReviews} Reviews)
+          ({product.rating.count} Reviews)
         </span>
       </div>
       <span className="text-tomato font-medium text-base">{`₹${product.price}`}</span>
