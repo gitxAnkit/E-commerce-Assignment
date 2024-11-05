@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
           ({product.rating.count} Reviews)
         </span>
       </div>
-      <span className="text-tomato font-medium text-base">{`₹${product.price}`}</span>
+      <span className="text-tomato font-medium text-base">{`$${product.price}`}</span>
     </Link>
   );
 };

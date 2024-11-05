@@ -4,13 +4,19 @@ import ErrorBoundary from "./app/ErrorBoundary.jsx";
 import NavBar from "./components/NavBar.jsx";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Home from "./Pages/Home.jsx";
+import Products from "./Pages/Products.jsx";
+import ProductDetails from "./Pages/ProductDetails.jsx";
+
 const App = () => {
   return (
-    <ErrorBoundary>
-      <Router>
+    <Router>
+      <ErrorBoundary>
         <NavBar />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
@@ -25,8 +31,8 @@ const App = () => {
           draggable
           pauseOnHover
         />
-      </Router>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </Router>
   );
 };
 
