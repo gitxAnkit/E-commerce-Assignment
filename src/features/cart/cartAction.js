@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../app/api";
-import { addToCart } from "./cartSlice";
 
 export const addItemsToCart = createAsyncThunk(
     'cart/addToCart',
@@ -8,7 +7,6 @@ export const addItemsToCart = createAsyncThunk(
         try {
             const response = await api.get(`/products/${id}`);
             const data = response.data;
-
             const cartItem = {
                 product: data.id,
                 name: data.title,
@@ -16,6 +14,7 @@ export const addItemsToCart = createAsyncThunk(
                 image: data.image,
                 quantity,
             };
+            // console.log("Cart Item: ", cartItem);
             return cartItem;
 
         } catch (error) {

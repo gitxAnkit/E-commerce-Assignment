@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { clearErrors } from "../features/products/productSlice";
 import ErrorBoundary from "../app/ErrorBoundary";
 import { getProductDetails } from "../features/products/productAction";
+import { addItemsToCart } from "../features/cart/cartAction";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ const ProductDetails = () => {
   const decreaseQuantity = () => {
     if (quantity <= 1) return;
     setQuantity(quantity - 1);
+  };
+  const addToCartHandler = () => {
+    dispatch(addItemsToCart({ id, quantity }));
+    toast.success("Item Added To Cart");
   };
 
   useEffect(() => {
@@ -44,10 +49,10 @@ const ProductDetails = () => {
 
   return (
     <ErrorBoundary>
-      <div className="p-8 bg-gray-50 min-h-screen m-10">
+      <div className="p-8 bg-gray-50 min-h-screen m-10 justify-center flex">
         {product ? (
           <>
-            <div className="flex flex-col md:flex-row items-center md:items-start space-x-6">
+            <div className="flex flex-col md:flex-row items-center md:items-start space-x-6 w-[70%]">
               <div className="w-full md:w-80 md:h-80 mb-6 md:mb-0 sm:h-40 sm:w-40">
                 <img
                   src={product.image}
@@ -89,7 +94,10 @@ const ProductDetails = () => {
                     +
                   </button>
                 </div>
-                <button className="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600">
+                <button
+                  onClick={addToCartHandler}
+                  className="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600"
+                >
                   Add to Cart
                 </button>
                 <div className="mt-6">

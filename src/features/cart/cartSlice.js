@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../../app/api";
+import { addItemsToCart } from "./cartAction";
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -32,6 +32,7 @@ const cartSlice = createSlice({
                     );
                 } else {
                     state.cartItems.push(item);
+                    console.log("Cart Items: ", state.cartItems);
                 }
             })
             .addCase(addItemsToCart.rejected, (state, action) => {

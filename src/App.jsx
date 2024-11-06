@@ -7,6 +7,10 @@ import Footer from "./components/Footer";
 import Home from "./Pages/Home.jsx";
 import Products from "./Pages/Products.jsx";
 import ProductDetails from "./Pages/ProductDetails.jsx";
+import Cart from "./Pages/Cart/Cart.jsx";
+import About from "./Pages/About.jsx";
+import Contact from "./Pages/Contact.jsx";
+import Shipping from "./Pages/Cart/Shipping.jsx";
 
 const App = () => {
   return (
@@ -17,12 +21,15 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shipping" element={<Shipping />} />
         </Routes>
         <Footer />
         <ToastContainer
           position="top-right"
-          autoClose={4000}
+          autoClose={1000}
           hideProgressBar
           newestOnTop
           closeOnClick
