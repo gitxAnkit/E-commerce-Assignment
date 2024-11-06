@@ -41,9 +41,9 @@ const Cart = () => {
 
   return (
     <ErrorBoundary>
-      <Fragment>
+      <>
         {cartItems.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20">
+          <div className="flex min-h-screen flex-col items-center justify-center py-20">
             <MdRemoveShoppingCart fontSize="large" />
             <Typography variant="h5" className="my-4">
               No Product in Your Cart
@@ -115,7 +115,7 @@ const Cart = () => {
             </div>
           </div>
         )}
-      </Fragment>
+      </>
     </ErrorBoundary>
   );
 };
