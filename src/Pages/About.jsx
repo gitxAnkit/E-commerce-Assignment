@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography, Avatar } from "@mui/material";
+import { Button, Avatar } from "@mui/material";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 const About = () => {
@@ -16,7 +16,7 @@ const About = () => {
       <div className="flex flex-col items-center text-center">
         <Avatar
           sx={{ width: 120, height: 120, mb: 4 }}
-          src="https://res.cloudinary.com/dlbcv2oft/image/upload/v1729023353/ankit__xjwniz.jpg" // Placeholder for your logo or image
+          src="https://res.cloudinary.com/dlbcv2oft/image/upload/v1729023353/ankit__xjwniz.jpg"
           alt="Zenith-Mart Logo"
         />
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
@@ -31,10 +31,10 @@ const About = () => {
           Visit Instagram
         </Button>
         <p className="text-gray-600 mt-4 max-w-lg">
-          Welcome to Zenith-Mart, your one-stop destination for a comprehensive
-          and seamless online shopping experience! Our goal is to provide you
-          with the best selection of products, competitive pricing, and
-          unmatched customer service.
+          Welcome to our E-Commerce, your one-stop destination for a
+          comprehensive and seamless online shopping experience! Our goal is to
+          provide you with the best selection of products, competitive pricing,
+          and unmatched customer service.
         </p>
       </div>
 

@@ -11,6 +11,9 @@ import Cart from "./Pages/Cart/Cart.jsx";
 import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import Shipping from "./Pages/Cart/Shipping.jsx";
+import ConfirmOrder from "./Pages/Cart/ConfirmOrder.jsx";
+import Payment from "./Pages/Cart/Payment.jsx";
+import Success from "./Pages/Cart/Success.jsx";
 
 const App = () => {
   return (
@@ -25,6 +28,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/shipping" element={<Shipping />} />
+          <Route path="/order/confirm" element={<ConfirmOrder />} />
+          <Route path="/process/payment" element={<Payment />} />
+          <Route path="/success" element={<Success />} />
         </Routes>
         <Footer />
         <ToastContainer

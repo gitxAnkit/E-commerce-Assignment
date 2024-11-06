@@ -91,7 +91,7 @@ const Cart = () => {
                     +
                   </Button>
                 </div>
-                <p className="text-center font-medium">{`₹${
+                <p className="text-center font-medium">{`$${
                   item.price * item.quantity
                 }`}</p>
               </div>
@@ -99,7 +99,7 @@ const Cart = () => {
             <div className="flex justify-end mt-4">
               <div className="flex flex-col items-end">
                 <p className="text-lg font-bold">Gross Total:</p>
-                <p className="text-xl font-bold text-blue-600">{`₹${cartItems.reduce(
+                <p className="text-xl font-bold text-blue-600">{`$ ${cartItems.reduce(
                   (acc, item) => acc + item.quantity * item.price,
                   0
                 )}`}</p>

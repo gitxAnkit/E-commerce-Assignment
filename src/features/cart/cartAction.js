@@ -14,7 +14,6 @@ export const addItemsToCart = createAsyncThunk(
                 image: data.image,
                 quantity,
             };
-            // console.log("Cart Item: ", cartItem);
             return cartItem;
 
         } catch (error) {

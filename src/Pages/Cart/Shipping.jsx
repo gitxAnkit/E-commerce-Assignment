@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -52,7 +52,7 @@ const Shipping = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <ErrorBoundary>
         <CheckoutSteps activeStep={0} />
 
@@ -161,7 +161,7 @@ const Shipping = () => {
           </div>
         </div>
       </ErrorBoundary>
-    </Fragment>
+    </>
   );
 };
 

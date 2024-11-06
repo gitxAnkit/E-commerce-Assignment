@@ -32,7 +32,6 @@ const cartSlice = createSlice({
                     );
                 } else {
                     state.cartItems.push(item);
-                    console.log("Cart Items: ", state.cartItems);
                 }
             })
             .addCase(addItemsToCart.rejected, (state, action) => {

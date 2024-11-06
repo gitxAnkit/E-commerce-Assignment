@@ -8,7 +8,6 @@ import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  // if (!product) return <Loader />;
   return (
     <Link
       to={`/product/${product.id}`}
@@ -69,7 +68,7 @@ const CategoryRow = ({ title, products }) => {
           {products.map((product) => (
             <>
               <ProductCard key={product.id} product={product} />
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id + 100} product={product} />
             </>
           ))}
         </div>
@@ -118,9 +117,9 @@ const Home = () => {
 
       <div className="max-w-[1400px] mx-auto">
         {categories &&
-          categories.map((category) => (
+          categories.map((category, index) => (
             <CategoryRow
-              key={category}
+              key={index}
               title={category}
               products={products.filter(
                 (product) => product.category === category
